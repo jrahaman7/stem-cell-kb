@@ -16,14 +16,17 @@ export default function SelfCheck() {
   const anyNo = qs.some(q => a[q.id] === "no");
   const anyUnsure = qs.some(q => a[q.id] === "unsure");
 
+  const done = qs.filter(q => a[q.id]).length;
   return (
     <div>
+      <p className="count" aria-live="polite">{done} of {qs.length} criteria answered{(done > 0 || ssp) && <> · <button className="linkbtn" onClick={() => { setA({}); setSsp(undefined); }}>Start over</button></>}</p>
+      <div className="progress"><span style={{ width: `${(done / qs.length) * 100}%` }} /></div>
       <div className="q">
         <h3>Step 0. Same surgical procedure exception (21 CFR 1271.15(b))</h3>
         <p className="muted">Are cells removed from a patient and put back into the same patient during the same surgical procedure, with no processing beyond rinsing, cleansing, sizing or shaping?</p>
         <div className="opts">
           {(["yes", "no", "unsure"] as const).map(v => (
-            <button key={v} className={ssp === v ? "" : "secondary"} onClick={() => setSsp(v)}>{v[0].toUpperCase() + v.slice(1)}</button>
+            <button key={v} aria-pressed={ssp === v} className={ssp === v ? "" : "secondary"} onClick={() => setSsp(v)}>{v[0].toUpperCase() + v.slice(1)}</button>
           ))}
         </div>
         {ssp === "yes" && <p className="good" style={{ marginBottom: 0 }}>This <strong>may</strong> fall outside Part 1271. Read it narrowly: in the stromal vascular fraction (SVF) case, courts held that isolating cells from fat went beyond this exception, and the Supreme Court declined review in October 2025.</p>}
@@ -34,11 +37,12 @@ export default function SelfCheck() {
           <p className="muted">{q.d}</p>
           <div className="opts">
             {(["yes", "no", "unsure"] as const).map(v => (
-              <button key={v} className={a[q.id] === v ? "" : "secondary"} onClick={() => setA({ ...a, [q.id]: v })}>{v[0].toUpperCase() + v.slice(1)}</button>
+              <button key={v} aria-pressed={a[q.id] === v} className={a[q.id] === v ? "" : "secondary"} onClick={() => setA({ ...a, [q.id]: v })}>{v[0].toUpperCase() + v.slice(1)}</button>
             ))}
           </div>
         </div>
       ))}
+      {!answered && done > 0 && <p className="muted">Answer all four criteria to see a result.</p>}
       {answered && (anyNo ? (
         <div className="notice"><strong>Likely a 351 biologic (drug/biological product).</strong> You will need an IND to run clinical studies and an approved BLA before marketing. Most customized, culture-expanded or gene-modified stem cell therapies land here. See <a href="/pathways">Pathways</a>.</div>
       ) : anyUnsure ? (

@@ -170,7 +170,7 @@ export const cases: SuccessCase[] = [
   // ---------- Engineered immune cells ----------
   {
     id: "kymriah", product: "KYMRIAH", generic: "tisagenlecleucel",
-    condition: "B-cell ALL up to age 25; DLBCL; follicular lymphoma",
+    condition: "B-cell acute lymphoblastic leukemia (ALL) up to age 25; DLBCL; follicular lymphoma",
     approved: "Aug 30, 2017 (first CAR-T)", source: A, group: "Engineered immune cells", status: "FDA-approved", evidence: "Single-arm",
     stat: "83%", statLabel: "remission within 3 months (63 patients, ELIANA)",
     outcome: "The patient's own T cells engineered with a CD19 CAR. 83% of children and young adults with relapsed leukemia went into remission.",
@@ -190,7 +190,7 @@ export const cases: SuccessCase[] = [
   },
   {
     id: "tecartus", product: "TECARTUS", generic: "brexucabtagene autoleucel",
-    condition: "Mantle cell lymphoma; adult B-cell ALL",
+    condition: "Mantle cell lymphoma; adult B-cell acute lymphoblastic leukemia",
     approved: "Jul 24, 2020 (MCL); Oct 1, 2021 (ALL)", source: A, group: "Engineered immune cells", status: "FDA-approved", evidence: "Single-arm",
     stat: "87%", statLabel: "response rate in mantle cell lymphoma (ZUMA-2)",
     outcome: "CD19 CAR-T for relapsed mantle cell lymphoma (62% complete responses) and adult ALL (about half in complete remission).",
@@ -231,7 +231,7 @@ export const cases: SuccessCase[] = [
   },
   {
     id: "aucatzyl", product: "AUCATZYL", generic: "obecabtagene autoleucel",
-    condition: "Adult relapsed/refractory B-cell ALL",
+    condition: "Adult relapsed/refractory B-cell acute lymphoblastic leukemia",
     approved: "Nov 8, 2024", source: A, group: "Engineered immune cells", status: "FDA-approved", evidence: "Single-arm",
     stat: "42%", statLabel: "complete remission within 3 months (27 of 65)",
     outcome: "A CD19 CAR with a fast off-rate binder designed to lower toxicity; median remission lasted 14.1 months.",
@@ -294,7 +294,7 @@ export const cases: SuccessCase[] = [
   },
   {
     id: "maci", product: "MACI", generic: "autologous cultured chondrocytes on porcine collagen membrane",
-    condition: "Full-thickness knee cartilage defects (adults)",
+    condition: "Full-thickness knee cartilage defects (adults). Not approved for osteoarthritis or general knee arthritis",
     approved: "Dec 2016", source: A, group: "Tissue & organ repair", status: "FDA-approved", evidence: "Randomized",
     stat: "5 years", statLabel: "benefit sustained vs microfracture (128 of 144 followed)",
     outcome: "The patient's own cartilage cells are grown on a membrane and implanted. In 144 randomized patients, knee pain and function improved significantly more than with microfracture at 2 years.",

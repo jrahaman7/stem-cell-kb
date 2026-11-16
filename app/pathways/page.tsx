@@ -14,14 +14,14 @@ export default function Page() {
         <li><strong>Post-approval.</strong> Long-term follow-up (especially for gene-modified cells), REMS where required, and post-approval manufacturing changes.</li>
       </ol>
       <h2>Access before approval</h2>
-      <table>
+      <div className="table-wrap"><table>
         <thead><tr><th>Route</th><th>Who it serves</th><th>Key condition</th></tr></thead>
         <tbody>
           <tr><td>Clinical trial (IND)</td><td>Eligible enrolled patients</td><td>FDA-cleared protocol and IRB approval</td></tr>
           <tr><td>Expanded access (single patient, intermediate-size, treatment IND)</td><td>Patients with serious conditions and no comparable alternative</td><td>FDA authorization, IRB approval and the sponsor's agreement</td></tr>
           <tr><td>Right to Try (federal law, 2018)</td><td>Eligible patients with life-threatening conditions</td><td>Investigational product has completed Phase 1, and the manufacturer agrees</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Customized and point-of-care manufacturing</h2>
       <p>Truly individualized therapies (autologous, patient-specific or N-of-1) raise particular CMC questions: making the product at several sites, comparability between batches, and release testing on short timelines. FDA has discussed distributed and point-of-care manufacturing models publicly. Any such model still runs under an IND or a BLA, with quality controls at every site. There is no stand-alone "clinic license" route.</p>
       <div className="good">Tip: put manufacturing-site strategy (central, hub-and-spoke or point-of-care) on the table at your first INTERACT or pre-IND meeting. Changing it later is costly.</div>

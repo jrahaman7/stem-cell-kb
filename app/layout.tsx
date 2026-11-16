@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <footer className="site">
               <div className="wrap">
                 <p>
-                  Educational knowledge base for researchers. Not affiliated with or endorsed by the U.S. Food and Drug
+                  Educational knowledge base for patients, clinicians and researchers. Not affiliated with or endorsed by the U.S. Food and Drug
                   Administration. Not medical or legal advice. Always confirm current requirements with FDA (CBER) and
                   primary sources. Content reviewed November 16, 2026.
                 </p>

@@ -20,6 +20,7 @@ export default function Page() {
         <div className="stat"><b>{randomized}</b><span>backed by randomized trials</span></div>
         <div className="stat"><b>38</b><span>FDA licenses covered (incl. 9 cord blood banks)</span></div>
       </div>
+      <div className="good"><strong>Patient or family member?</strong> Pick your condition below. If nothing matches, read the <a href="/patients">plain-language guide</a> before talking to any clinic.</div>
       <CaseBrowser />
       <div className="notice">
         <strong>Reading these figures:</strong> each number describes a trial population, not a promise for any single
