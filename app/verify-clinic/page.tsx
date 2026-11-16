@@ -15,7 +15,7 @@ export default function Page() {
       <p className="lead">A checklist researchers can share with patients and referring physicians to tell legitimate programs from unproven stem cell clinics.</p>
       <table><thead><tr><th>Question</th><th>What to look for</th></tr></thead>
         <tbody>{checks.map(([q, a]) => <tr key={q}><td><strong>{q}</strong></td><td>{a}</td></tr>)}</tbody></table>
-      <div className="notice">FDA has issued more than 400 letters to manufacturers and health care providers that may be offering violative stem cell or related products. Report adverse events to <a href="https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" target="_blank" rel="noreferrer">FDA MedWatch</a>.</div>
+      <div className="notice">FDA enforcement is ongoing: after more than 400 letters to stem cell product makers and providers in 2018–2019, FDA issued warning letters to clinics in Nevada (Feb 2026), New Jersey (May 2026) and Arizona (Aug 2026) for unapproved stem cell, cord and exosome products. Report adverse events to <a href="https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" target="_blank" rel="noreferrer">FDA MedWatch</a>.</div>
     </>
   );
 }
