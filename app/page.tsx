@@ -47,9 +47,20 @@ export default function Home() {
       <p className="eyebrow">Cell therapy · FDA · US patients · 2030</p>
       <h1>Customized <em>stem cell therapy</em> for all US patients</h1>
       <p className="lead">
-        A practical knowledge base for patients, clinicians and researchers: what FDA has approved, the evidence behind it,
-        how the rules work, and what it would take to reach every US patient by 2030.
+        Evidence first, for <em>patients, clinicians and researchers</em>: what FDA has approved, the trial results behind
+        it, and how to tell real therapy from an unproven clinic.
       </p>
+      <p className="cred">Curated by Dr. Javid Ur Rahaman, Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®</p>
+      <div className="hero-actions">
+        <Link className="btn" href="/success-cases">See successful cases</Link>
+        <Link className="btn secondary" href="/verify-clinic">Check a clinic</Link>
+      </div>
+      <div className="credline">
+        <span>{cases.filter(c => c.status === "FDA-approved").length} FDA-approved successes, sourced</span>
+        <span>{products.length} FDA-licensed products</span>
+        <span>Figures checked against FDA labels, Nov 2026</span>
+        <a href="https://drjavid.bio" target="_blank" rel="noreferrer">drjavid.bio</a>
+      </div>
       <h2>Who are you?</h2>
       <div className="aud">
         {audiences.map(a => (

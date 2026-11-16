@@ -1,6 +1,13 @@
+import "@fontsource/newsreader/400.css";
+import "@fontsource/newsreader/500.css";
+import "@fontsource/newsreader/400-italic.css";
+import "@fontsource/hanken-grotesk/400.css";
+import "@fontsource/hanken-grotesk/600.css";
+import "@fontsource/hanken-grotesk/700.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import { Compass } from "@/components/Marks";
 
 const desc = "What FDA has approved in stem cell and cell therapy, the trial results behind it, how to check a clinic, and the rules for customized therapies in the US. For patients, clinicians and researchers.";
 export const metadata: Metadata = {
@@ -19,25 +26,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="shell">
           <Nav />
           <div className="page">
-            <svg className="ornament" viewBox="0 0 200 200" aria-hidden="true">
-              <g fill="none" stroke="currentColor" strokeWidth="1">
-                <circle cx="100" cy="100" r="96" /><circle cx="100" cy="100" r="64" /><circle cx="100" cy="100" r="32" />
-                <ellipse cx="100" cy="100" rx="96" ry="40" /><ellipse cx="100" cy="100" rx="40" ry="96" />
-                <line x1="4" y1="100" x2="196" y2="100" /><line x1="100" y1="4" x2="100" y2="196" />
-              </g>
-            </svg>
+            <Compass className="ornament" />
             <main id="content"><div className="wrap">{children}</div></main>
             <footer className="site">
+              <Compass className="ornament-foot" />
               <div className="wrap">
                 <p>
-                  Educational knowledge base for patients, clinicians and researchers. Not affiliated with or endorsed by the U.S. Food and Drug
-                  Administration. Not medical or legal advice. Always confirm current requirements with FDA (CBER) and
-                  primary sources. Content reviewed November 16, 2026.
+                  © 2026 Dr. Javid Ur Rahaman · AAI Applied Agentic Intelligence Research Labs® · Contact:{" "}
+                  <a href="https://wa.me/14695206090" target="_blank" rel="noreferrer">WhatsApp +1 469-520-6090</a> or{" "}
+                  <a href="https://x.com/JavidRShaik" target="_blank" rel="noreferrer">X</a> · Profile of record:{" "}
+                  <a href="https://www.linkedin.com/in/jrahaman7" target="_blank" rel="noreferrer">LinkedIn</a> ·{" "}
+                  <a href="https://drjavid.bio" target="_blank" rel="noreferrer">drjavid.bio</a>
                 </p>
-                <p>
-                  © 2026 AAI Applied Agentic Intelligence Research Labs® ·{" "}
-                  <a href="https://drjavid.bio" target="_blank" rel="noreferrer">drjavid.bio</a> ·{" "}
-                  <a href="https://www.linkedin.com/in/jrahaman7" target="_blank" rel="noreferrer">Profile of record</a>
+                <p className="fine">
+                  Educational knowledge base for patients, clinicians and researchers. Not affiliated with or endorsed by
+                  the U.S. Food and Drug Administration. Not medical or legal advice. Confirm current requirements with FDA
+                  (CBER) and primary sources. Content reviewed November 16, 2026.
                 </p>
               </div>
             </footer>

@@ -1,12 +1,12 @@
-/* Look and feel aligned with drjavid.bio: white page, soft lavender sidebar, editorial serif headings,
-   royal-blue actions, violet section labels. Standard installed fonts only (Georgia + Arial/Helvetica). */
+/* Look and feel aligned with drjavid.bio: white page, soft lavender sidebar, Newsreader headings, Hanken Grotesk body,
+   royal-blue actions, violet section labels. Fonts are self-hosted (@fontsource) so they render the same everywhere. */
 :root{--ink:#11131a;--muted:#5a6070;--soft:#3a3f4d;--line:#e6e4ef;--bg:#fff;--side:#faf9fd;--card:#fff;
 --accent:#1e4fd6;--accent-d:#163da8;--violet:#6f5cc4;--violet-l:#c9c0ee;--accent2:#eef2fd;
 --warn:#9a3412;--warnbg:#fff6ef;--ok:#166534;--okbg:#ecfdf3;
---serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+--serif:"Newsreader","Iowan Old Style",Georgia,serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px;z-index:9}
 
@@ -14,8 +14,9 @@ a{color:var(--accent)}
 .shell{display:flex;min-height:100vh}
 aside.side{width:264px;flex:0 0 264px;background:var(--side);border-right:1px solid var(--line);padding:26px 20px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);margin-bottom:22px}
+.monogram{flex:0 0 44px}
 .mono{width:40px;height:40px;flex:0 0 40px;border:1.5px solid var(--violet);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:13px;color:var(--violet);box-shadow:0 0 0 4px var(--side),0 0 0 5px var(--violet-l)}
-.brand-name{display:block;font-family:var(--serif);font-size:18px;line-height:1.25}
+.brand-name{display:block;font-family:var(--serif);font-weight:500;font-size:20px;line-height:1.2}
 .brand-sub{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin-top:4px}
 .nav-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin:18px 0 6px 16px}
 a.tab{display:block;color:var(--soft);text-decoration:none;padding:8px 16px;border-radius:6px;font-size:15px;border-left:3px solid transparent}
@@ -23,17 +24,17 @@ a.tab:hover{background:#efedf8;color:var(--ink)}
 a.tab.on{background:#efedf8;border-left-color:var(--accent);color:var(--ink);font-weight:700}
 .side-cta{margin-top:auto;text-align:center}
 .page{flex:1;min-width:0;position:relative;overflow:hidden}
-.ornament{position:absolute;top:-30px;right:-30px;width:200px;height:200px;color:var(--violet-l);pointer-events:none}
+.ornament{position:absolute;top:-40px;right:-40px;width:230px;height:230px;color:var(--violet-l);pointer-events:none}
 
 .wrap{max-width:900px;margin:0 auto;padding:0 40px}
 main{padding:56px 0 56px}
 
 /* Typography */
-h1{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1.12;margin:0 0 16px;letter-spacing:-.01em}
-h1 em,h2 em{color:var(--accent);font-style:italic}
-h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:40px 0 12px}
-h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 6px;line-height:1.25}
-p.lead{font-family:var(--serif);font-size:21px;line-height:1.5;color:var(--ink);max-width:720px}
+h1{font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.08;margin:0 0 18px;letter-spacing:-.015em}
+h1 em,h2 em,.lead em{color:var(--accent);font-style:italic;font-weight:400}
+h2{font-family:var(--serif);font-weight:500;font-size:30px;margin:44px 0 12px;letter-spacing:-.01em}
+h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;line-height:1.2}
+p.lead{font-family:var(--serif);font-size:23px;line-height:1.42;color:var(--ink);max-width:720px}
 .eyebrow,.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);border-top:1px solid var(--violet-l);border-bottom:1px solid var(--violet-l);padding:6px 0;margin:0 0 18px;background:none;border-radius:0}
 .muted{color:var(--muted)}
 .count{font-size:14px;color:var(--muted)}
@@ -70,7 +71,10 @@ ol.steps li{margin:10px 0}
 .timeline .item{margin:0 0 22px}
 .timeline .yr{font-weight:700;color:var(--violet);letter-spacing:.06em}
 label{font-weight:700;font-size:14px;display:block;margin:10px 0 4px}
-footer.site{border-top:1px solid var(--line);font-size:13px;color:var(--muted);padding:22px 0}
+footer.site{position:relative;overflow:hidden;border-top:1px solid var(--line);font-size:14px;color:var(--soft);padding:26px 0 30px}
+footer.site a{color:var(--soft)}
+footer.site .fine{font-size:12.5px;color:var(--muted)}
+.ornament-foot{position:absolute;right:-50px;bottom:-60px;width:180px;height:180px;color:var(--violet-l);pointer-events:none}
 
 /* Success cases */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0 26px}
@@ -162,3 +166,18 @@ a.anchor:hover{text-decoration:underline}
   table.stack td::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
   .cases{grid-template-columns:1fr}
 }
+
+/* drjavid.bio card details: violet label row + corner arrow on linked cards */
+a.card{position:relative}
+a.card::after{content:"↗";position:absolute;top:16px;right:18px;color:var(--violet);font-size:15px}
+a.card[href^="/"]::after{content:"→"}
+a.card h3{padding-right:22px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.btn.secondary{background:#fff;color:var(--ink);border-color:#d9d7e3}
+.btn.secondary:hover{background:var(--side)}
+.cred{font-weight:600;font-size:15px;color:var(--soft);margin:18px 0 4px}
+.credline{display:flex;flex-wrap:wrap;gap:6px 18px;border-top:1px solid var(--line);padding-top:14px;margin-top:22px;font-size:14.5px;color:var(--soft)}
+.credline a{color:var(--ink)}
+@media (max-width:860px){h1{font-size:38px}p.lead{font-size:20px}.ornament-foot{display:none}}
+
+.card p.label,.aud .label{color:var(--violet);font-size:11px;font-weight:700;letter-spacing:.14em}

@@ -2,9 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Monogram } from "./Marks";
 
-const groups: [string, [string, string][]][] = [
-  ["Start here", [["/", "Home"], ["/patients", "For patients & families"]]],
+const groups: [string | null, [string, string][]][] = [
+  [null, [["/", "Home"], ["/patients", "For patients & families"]]],
   ["Evidence", [["/success-cases", "Successful cases"], ["/products", "Approved products"]]],
   ["Regulation", [["/navigator", "Regulatory navigator"], ["/pathways", "Pathways"], ["/verify-clinic", "Verify a clinic"]]],
   ["Future & help", [["/roadmap-2030", "2030 roadmap"], ["/resources", "Resources"], ["/advisory", "Advisory"]]],
@@ -18,9 +19,9 @@ export default function Nav() {
     <aside className="side">
       <div className="side-head">
         <Link href="/" className="brand">
-          <span className="mono" aria-hidden="true">JR</span>
+          <Monogram />
           <span>
-            <span className="brand-name">Cell Therapy Knowledge Base</span>
+            <span className="brand-name">StemBio.life</span>
             <span className="brand-sub">Applied Intelligence</span>
           </span>
         </Link>
@@ -29,16 +30,16 @@ export default function Nav() {
         </button>
       </div>
       <nav id="mainnav" aria-label="Main" className={open ? "open" : ""}>
-        {groups.map(([label, links]) => (
-          <div key={label}>
-            <p className="nav-label">{label}</p>
+        {groups.map(([label, links], i) => (
+          <div key={i}>
+            {label && <p className="nav-label">{label}</p>}
             {links.map(([h, l]) => (
               <Link key={h} href={h} className={`tab ${path === h ? "on" : ""}`} aria-current={path === h ? "page" : undefined}>{l}</Link>
             ))}
           </div>
         ))}
       </nav>
-      <a className="btn side-cta" href="https://drjavid.bio" target="_blank" rel="noreferrer">Visit drjavid.bio</a>
+      <a className="btn side-cta" href="https://drjavid.bio" target="_blank" rel="noreferrer">Get the weekly brief</a>
     </aside>
   );
 }
