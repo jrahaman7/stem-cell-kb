@@ -26,8 +26,8 @@ export default function Page() {
         <strong>Reading these figures:</strong> each number describes a trial population, not a promise for any single
         patient. Many approved products carry boxed warnings or restrictions, and investigational cases are not FDA
         approved (two are conditionally approved in Japan only). Every approved product is given in a transplant,
-        oncology, surgical or specialty center. Cards marked for checking use secondary sources; confirm the current
-        label on DailyMed before citing. Compiled November 16, 2026.
+        oncology, surgical or specialty center. Figures were checked against FDA labels, FDA announcements or the
+        primary publications on November 16, 2026; always confirm the current label on DailyMed before clinical use.
       </div>
     </>
   );

@@ -2,10 +2,13 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 
+const desc = "What FDA has approved in stem cell and cell therapy, the trial results behind it, how to check a clinic, and the rules for customized therapies in the US. For patients, clinicians and researchers.";
 export const metadata: Metadata = {
-  title: "Cell Therapy Knowledge Base | Customized Stem Cell Therapy for US Patients",
-  description:
-    "A knowledge base portal for researchers working on customized stem cell and cell therapies in the US: successful cases, FDA rules, approval pathways, approved products and a 2030 care-delivery roadmap.",
+  metadataBase: new URL("https://www.stembio.life"),
+  title: { default: "StemBio.life | Cell Therapy Knowledge Base", template: "%s" },
+  openGraph: { type: "website", siteName: "StemBio.life", url: "https://www.stembio.life", title: "StemBio.life | Cell Therapy Knowledge Base", description: desc },
+  twitter: { card: "summary", title: "StemBio.life | Cell Therapy Knowledge Base", description: desc },
+  description: desc,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
