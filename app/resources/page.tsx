@@ -1,3 +1,4 @@
+import PageHeader from "@/components/PageHeader";
 export const metadata = { title: "Researcher resources | Cell Therapy Knowledge Base" };
 const res = [
   ["FDA: Approved Cellular and Gene Therapy Products", "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/approved-cellular-and-gene-therapy-products", "Official list of licensed products."],
@@ -12,10 +13,10 @@ const res = [
 export default function Page() {
   return (
     <>
-      <h1>Researcher resources</h1>
-      <p className="lead">Primary sources to check before relying on any summary, including this one.</p>
+      <PageHeader eyebrow="Primary sources · FDA · eCFR · ISSCR" title="Researcher" em="resources"
+        lead="Primary sources to check before relying on any summary, including this one." />
       <div className="grid">{res.map(([t, u, d]) => (
-        <a key={u} className="card" href={u} target="_blank" rel="noreferrer"><h3>{t}</h3><p>{d}</p></a>
+        <a key={u} className="card" href={u} target="_blank" rel="noreferrer"><p className="label">{new URL(u).hostname.replace("www.", "")}</p><h3>{t}</h3><p>{d}</p></a>
       ))}</div>
     </>
   );

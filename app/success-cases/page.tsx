@@ -1,3 +1,4 @@
+import PageHeader from "@/components/PageHeader";
 import CaseBrowser from "./CaseBrowser";
 import { cases } from "@/data/cases";
 
@@ -8,12 +9,8 @@ export default function Page() {
   const randomized = cases.filter(c => c.evidence === "Randomized").length;
   return (
     <>
-      <p className="eyebrow">Evidence · Outcomes · Precedents</p>
-      <h1>Successful cases in <em>stem cell &amp; cell therapy</em></h1>
-      <p className="lead">
-        The therapies that worked, and the numbers that got them through FDA review. Use these as precedents when you
-        design endpoints, choose a cell source or plan a customized product.
-      </p>
+      <PageHeader eyebrow="Evidence · Outcomes · Precedents" title="Successful cases in" em="stem cell & cell therapy"
+        lead="The therapies that worked, and the numbers that got them through FDA review. Use them as precedents when you design endpoints, choose a cell source or plan a customized product." />
       <div className="stats">
         <div className="stat"><b>{approved}</b><span>FDA-approved successes</span></div>
         <div className="stat"><b>{cases.length - approved}</b><span>investigational breakthroughs</span></div>

@@ -1,3 +1,4 @@
+import PageHeader, { Rows } from "@/components/PageHeader";
 import ContactForm from "./ContactForm";
 export const metadata = { title: "Advisory services | Cell Therapy Knowledge Base" };
 const services = [
@@ -9,16 +10,21 @@ const services = [
 export default function Page() {
   return (
     <>
-      <h1>Advisory services for research teams</h1>
-      <p className="lead">Independent regulatory-science and clinical-AI advisory for researchers developing customized stem cell and cell therapies.</p>
-      <div className="grid">{services.map(([t, d]) => <div key={t} className="card"><h3>{t}</h3><p>{d}</p></div>)}</div>
+      <PageHeader eyebrow="Work with me · Advisory · Speaking" title="Advisory for" em="research teams"
+        lead="Independent regulatory-science and clinical-AI advisory for researchers developing customized stem cell and cell therapies."
+        cred="Dr. Javid Ur Rahaman · Founder & Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®"
+        actions={[{ href: "#contact", label: "Start a conversation" }, { href: "https://drjavid.bio", label: "Visit drjavid.bio", secondary: true, external: true }]} />
+      <div className="grid">{services.map(([t, d]) => <div key={t} className="card"><p className="label">Service</p><h3>{t}</h3><p>{d}</p></div>)}</div>
       <h2>About</h2>
-      <div className="card">
-        <h3>Dr. Javid Ur Rahaman</h3>
-        <p>Founder &amp; Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®. Doctorate in Time Series RL from Golden Gate University, San Francisco, CA, USA. Former VP at Oracle, with two decades in enterprise architecture, followed by clinical AI research at Vyrex BIO.</p>
-        <p style={{ marginTop: 10 }}><a href="https://www.linkedin.com/in/jrahaman7" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://drjavid.bio" target="_blank" rel="noreferrer">drjavid.bio</a> · WhatsApp +1 469-520-6090</p>
-      </div>
-      <h2>Contact</h2>
+      <p>Doctorate in Time Series RL from Golden Gate University, San Francisco, CA, USA. Two decades in enterprise architecture, followed by clinical AI research.</p>
+      <Rows rows={[
+        ["Since 2026", "Founder & Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®"],
+        ["2023–2026", "VP of Research, Vyrex.BIO"],
+        ["2003–2022", "Vice President of Engineering, later Senior Program Architect, Oracle"],
+        ["2000–2002", "Senior Scientist, DRDL–DRDO"],
+      ]} />
+      <p className="small"><a href="https://www.linkedin.com/in/jrahaman7" target="_blank" rel="noreferrer">LinkedIn (profile of record)</a> · <a href="https://drjavid.bio" target="_blank" rel="noreferrer">drjavid.bio</a> · WhatsApp +1 469-520-6090</p>
+      <h2 id="contact">Contact</h2>
       <ContactForm />
       <p className="count">Independent advisor. Not an FDA employee; views are not those of FDA.</p>
     </>

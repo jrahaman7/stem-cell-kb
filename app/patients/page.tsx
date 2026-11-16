@@ -1,3 +1,4 @@
+import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
 
 export const metadata = { title: "For patients & families | Cell Therapy Knowledge Base" };
@@ -25,12 +26,9 @@ const ask: string[] = [
 export default function Page() {
   return (
     <>
-      <p className="eyebrow">Plain-language guide</p>
-      <h1>For <em>patients & families</em></h1>
-      <p className="lead">
-        Stem cell therapy is real medicine for some conditions, and an expensive risk for many others. This page helps
-        you tell the difference and talk it through with your doctor.
-      </p>
+      <PageHeader eyebrow="Plain-language guide · Patients · Families" title="For" em="patients & families"
+        lead="Stem cell therapy is real medicine for some conditions, and an expensive risk for many others. This page helps you tell the difference and talk it through with your doctor."
+        actions={[{ href: "/verify-clinic", label: "Check a clinic" }, { href: "/success-cases", label: "See approved therapies", secondary: true }]} />
 
       <div className="facts">
         <div className="card"><h3>What is proven</h3><p>FDA has approved cell therapies for certain blood cancers, sickle cell disease, thalassemia, some rare genetic and immune conditions, type 1 diabetes with severe low blood sugar, knee cartilage defects, burns and some eye and skin conditions. They are given in hospitals and specialist centers.</p></div>

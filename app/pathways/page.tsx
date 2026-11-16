@@ -1,9 +1,11 @@
+import PageHeader from "@/components/PageHeader";
 export const metadata = { title: "Pathways to patients | Cell Therapy Knowledge Base" };
 export default function Page() {
   return (
     <>
-      <h1>Pathways to patients</h1>
-      <p className="lead">How a customized stem cell therapy (a 351 biologic) moves from the lab to US patients.</p>
+      <PageHeader eyebrow="Regulation · IND · RMAT · BLA" title="Pathways to" em="patients"
+        lead="How a customized stem cell therapy (a 351 biologic) moves from the lab to US patients, and how patients can reach it before approval."
+        actions={[{ href: "/navigator", label: "Check your regulatory tier" }, { href: "/success-cases", label: "See approved precedents", secondary: true }]} />
       <ol className="steps">
         <li><strong>Preclinical and CMC foundation.</strong> Define the product: cell source, manufacturing process, potency assay, release specifications, and safety studies (tumorigenicity, biodistribution, as relevant).</li>
         <li><strong>Early FDA engagement.</strong> CBER's Office of Therapeutic Products (OTP) offers INTERACT meetings for early, informal advice, and pre-IND meetings before you file.</li>

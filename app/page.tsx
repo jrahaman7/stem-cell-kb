@@ -1,3 +1,4 @@
+import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { cases } from "@/data/cases";
@@ -44,17 +45,10 @@ const sections = [
 export default function Home() {
   return (
     <>
-      <p className="eyebrow">Cell therapy · FDA · US patients · 2030</p>
-      <h1>Customized <em>stem cell therapy</em> for all US patients</h1>
-      <p className="lead">
-        Evidence first, for <em>patients, clinicians and researchers</em>: what FDA has approved, the trial results behind
-        it, and how to tell real therapy from an unproven clinic.
-      </p>
-      <p className="cred">Curated by Dr. Javid Ur Rahaman, Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®</p>
-      <div className="hero-actions">
-        <Link className="btn" href="/success-cases">See successful cases</Link>
-        <Link className="btn secondary" href="/verify-clinic">Check a clinic</Link>
-      </div>
+      <PageHeader eyebrow="Cell therapy · FDA · US patients · 2030" title="Customized" em="stem cell therapy" after="for all US patients"
+        lead="Evidence first, for patients, clinicians and researchers: what FDA has approved, the trial results behind it, and how to tell real therapy from an unproven clinic."
+        cred="Curated by Dr. Javid Ur Rahaman, Head of Applied Intelligence, AAI Applied Agentic Intelligence Research Labs®"
+        actions={[{ href: "/success-cases", label: "See successful cases" }, { href: "/verify-clinic", label: "Check a clinic", secondary: true }]} />
       <div className="credline">
         <span>{cases.filter(c => c.status === "FDA-approved").length} FDA-approved successes, sourced</span>
         <span>{products.length} FDA-licensed products</span>

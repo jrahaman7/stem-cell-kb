@@ -181,3 +181,18 @@ a.card h3{padding-right:22px}
 @media (max-width:860px){h1{font-size:38px}p.lead{font-size:20px}.ornament-foot{display:none}}
 
 .card p.label,.aud .label{color:var(--violet);font-size:11px;font-weight:700;letter-spacing:.14em}
+
+/* Shared page patterns (all pages): header, rows, small print */
+.page-head{margin-bottom:8px}
+.rows{border-top:1px solid var(--line);margin:18px 0 26px}
+.rows .row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rows .rk{color:var(--violet);font-weight:700;font-size:14.5px}
+.rows .rv{color:var(--soft)}
+.rows .rv strong{color:var(--ink)}
+p.small,.small{font-size:14px}
+.muted.small{color:var(--muted)}
+ul{padding-left:22px}
+ul li{margin:6px 0;color:var(--soft)}
+ol.steps li{color:var(--soft)}
+ol.steps li strong{color:var(--ink)}
+@media (max-width:860px){.rows .row{grid-template-columns:1fr;gap:4px}}
