@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { products } from "@/data/products";
+import { cases } from "@/data/cases";
 
 const sections = [
+  ["/success-cases", "Successful cases", `${cases.length} landmark successes, from CRISPR-edited stem cells to stem-cell-derived islets, with the outcome numbers and sources.`],
   ["/navigator", "Regulatory navigator", "How FDA regulates cell and tissue products, and a self-check for whether your product is a 361 HCT/P or a 351 biologic."],
   ["/pathways", "Pathways to patients", "Step by step from preclinical work to IND, expanded access, RMAT and BLA approval."],
   ["/products", "Approved products directory", `Search all ${products.length} FDA-approved cellular and gene therapy products, grouped for researchers.`],
@@ -14,8 +16,8 @@ const sections = [
 export default function Home() {
   return (
     <>
-      <span className="tag">Knowledge base portal</span>
-      <h1>Customized stem cell therapy for all US patients</h1>
+      <p className="eyebrow">Cell therapy · FDA · US patients · 2030</p>
+      <h1>Customized <em>stem cell therapy</em> for all US patients</h1>
       <p className="lead">
         A practical knowledge base for researchers building personalized stem cell and cell therapies. It covers how
         the FDA rules work today, the routes to approval, and what it would take to deliver these therapies widely by 2030.
